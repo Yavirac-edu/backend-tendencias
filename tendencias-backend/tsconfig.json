@@ -18,10 +18,28 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false
   },
-  "@ventas/controllers":[
-    "./src/ventas/controllers"
+  "@sales/controllers":[
+    "./src/modules/sales/controllers"
   ],
-  "@ventas/entities":[
-    "./src/ventas/entities"
+  "@sales/entities":[
+    "./src//modules/sales/entities"
+  ],
+  "@sales/providers":[
+    "./src/modules/sales/providers"
+  ],
+  "@sales/dto":[
+    "./src/modules/sales/dto"
+  ],
+  "@category/controllers":[
+    "./src/modules/category/controllers"
+  ],
+  "@category/entities":[
+    "./src//modules/category/entities"
+  ],
+  "@category/providers":[
+    "./src/modules/category/providers"
+  ],
+  "@category/dto":[
+    "./src/modules/category/dto"
   ],
 }
