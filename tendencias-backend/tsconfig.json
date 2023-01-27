@@ -17,5 +17,11 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false
-  }
+  },
+  "@ventas/controllers":[
+    "./src/ventas/controllers"
+  ],
+  "@ventas/entities":[
+    "./src/ventas/entities"
+  ],
 }
