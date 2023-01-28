@@ -1,4 +1,6 @@
+import { ProductEntity } from "src/modules/sales/entities";
 import { BeforeInsert, BeforeUpdate, Column, CreateDateColumn, DeleteDateColumn, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { OneToMany } from "typeorm/decorator/relations/OneToMany";
 
 export class CategoryEntity{
 
@@ -33,19 +35,16 @@ export class CategoryEntity{
     unique:true,
     comment: 'titulo del producto',
     })
-    title:string;
+    name:string;
     
-    @Column('number', {
-    name:'price',
-    comment:'precio del producto con dos decimales',
-    })
-    price:number;
-    @Column('varchar',{
-    name:'description',
-    nullable:true,
-    comment:'descripción del producto'
-    })
-    description: string;
+    //Relationship   
+     // Relaciones de uno a muchos
+    @OneToMany(() => ProductEntity , (product) => product.category)
+    products: ProductEntity[]
+
+    // Relaciones de muchos a uno
+    // @ManyToOne(() => CategoryEntity, (cateogry) => category.products)
+    // category: CategoryEntity;
     
     /*@Column('boolean',{
     name:'state',
@@ -61,11 +60,11 @@ export class CategoryEntity{
     
     @BeforeInsert()
     @BeforeUpdate()
-    async setTitle(){
-    if(!this.title){
+    async setName(){
+    if(!this.name){
         return;
     }
-    this.title = this.title.toUpperCase();
+    this.name = this.name.toUpperCase();
     }
     /*setEmail(){
     if(!this.email){
