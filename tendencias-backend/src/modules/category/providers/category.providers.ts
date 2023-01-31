@@ -4,8 +4,8 @@ import { DataSource } from 'typeorm';
 // import { DataSourceEnum, RepositoryEnum } from '@shared/enums';
 // import { RequirementRequestEntity } from '../entities/requirement-request.entity';
 
-import { CategoryEntity } from '../../../modules/category/entities/category.entity';
-import { ProductEntity } from '../../../modules/sales/entities';
+import { CategoryEntity } from '../entities/category.entity';
+import { ProductEntity } from '../../sales/entities';
 import { RepositoryEnum } from 'src/shared/enums';
 
 export const categoryProviders = [
