@@ -32,18 +32,27 @@ export class CancionEntity{
     // category: CategoryEntity;
     
     @Column('varchar', {
-    name:'name',
-    unique:true,
-    comment: 'titulo de la canción',
-    })
-    name:string;
+        name:'name',
+        length: '100',
+        unique:true,
+        comment: 'titulo de la canción',
+        })
+        name:string;
 
     @Column('date', {
         name:'fechaCreacion',
         unique:true,
         comment: 'Fecha de la creación de la canción',
         })
-        fechaCreacion:string;
+        fechaCreacion:Date;
+
+    @Column('varchar', {
+        name:'genero',
+        length: '60',
+        unique:true,
+        comment: 'Genero de la canción',
+        })
+        album:string;
     
     //Relationship   
      // Relaciones de uno a muchos

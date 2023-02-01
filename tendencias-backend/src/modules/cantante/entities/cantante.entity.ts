@@ -32,11 +32,12 @@ export class CantanteEntity{
     // category: CategoryEntity;
     
     @Column('varchar', {
-    name:'name',
-    unique:true,
-    comment: 'Nombre del cantante',
-    })
-    name:string;
+        name:'name',
+        length: '100',
+        unique:true,
+        comment: 'Nombre del cantante',
+        })
+        name:string;
 
     @Column('date', {
         name:'feachaNacimiento',
@@ -48,10 +49,19 @@ export class CantanteEntity{
 
     @Column('varchar', {
         name:'nacionalidad',
+        length: '100',
         unique:true,
         comment: 'Nacionalidad del cantante',
         })
         nacionalidad:string; 
+    
+     @Column('varchar', {
+        name:'genero',
+        length: '100',
+        unique:true,
+        comment: 'Genero de musica del cantante',
+        })
+        genero:string; 
     //Relationship   
      // Relaciones de uno a muchos
     @OneToMany(() => CancionEntity , (cancion) => cancion.cantante)
