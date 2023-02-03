@@ -42,4 +42,7 @@
   "@category/dto":[
     "./src/modules/category/dto"
   ],
+  "@shared/enum":[
+    "./src/shared/enums"
+  ],
 }
